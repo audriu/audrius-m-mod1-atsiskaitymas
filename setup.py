@@ -1,6 +1,6 @@
 import setuptools
 
-with open("README.md", "r", encoding = "utf-8") as fh:
+with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
@@ -9,7 +9,7 @@ setuptools.setup(
     author="Audrius M",
     author_email="balvakokay@gmail.com",
     description="Website crawler",
-    long_description = long_description,
+    long_description=long_description,
     source_url="https://github.com/audriu/audrius-m-mod1-atsiskaitymas",
     url="https://pypi.org/project/audrius-m-mod1-atsiskaitymas/",
     classifiers=[
@@ -19,5 +19,5 @@ setuptools.setup(
     ],
     package_dir={"": "audrius_m_mod1_atsiskaitymas"},
     packages=setuptools.find_packages(where="audrius_m_mod1_atsiskaitymas"),
-    python_requires=">=3.6"
+    python_requires=">=3.10"
 )

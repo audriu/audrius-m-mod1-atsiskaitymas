@@ -10,5 +10,3 @@ pip install audrius-m-mod1-atsiskaitymas
 #fix Pypi pip install
 
 #add tests `pytest --cov=my_module tests/`
-
-#use python >3.10
