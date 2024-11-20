@@ -2,14 +2,14 @@ import requests
 from typing import Optional
 
 
-def crawl(time_limit: int = 60, source: str = 'https://en.wikipedia.org/wiki/Main_Page', return_format: str = 'csv') -> \
-Optional[str]:
+def crawl(time_limit: int = 60, source: str = 'https://en.wikipedia.org/wiki/Main_Page', return_format: str = 'html') -> \
+        Optional[str]:
     """
     Crawl data from a specified source within a given time limit and return the data in a specified format.
 
     :param time_limit: The maximum time (in seconds) to spend crawling. Default is 60 seconds.
     :param source: The source to crawl data from. Default is 'https://en.wikipedia.org/wiki/Main_Page'.
-    :param return_format: The format in which to return the data. Default is 'csv'.
+    :param return_format: The format in which to return the data. Default is 'html'. But plain text is available
     :return: The crawled data in the specified format, or None if no data is found.
     """
     try:
@@ -20,11 +20,11 @@ Optional[str]:
         if response.status_code == 200:
             # Process the response data
             data = response.text
-            if return_format == 'text':
-                # todo handle text formats CSV formatu, dictionary formatu, list formatu, objektais
+            if return_format == 'html':
                 return data
             else:
-                return data
+                # todo text. And maybe later CSV, dictionary, list, object
+                raise NotImplementedError("This data format has not been implemented yet.")
         else:
             print(f"Failed to retrieve data: HTTP {response.status_code}")
             return None
