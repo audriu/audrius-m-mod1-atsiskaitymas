@@ -1,5 +1,6 @@
 import requests
 from typing import Optional
+from bs4 import BeautifulSoup
 
 
 def crawl(time_limit: int = 60, source: str = 'https://en.wikipedia.org/wiki/Main_Page', return_format: str = 'html') -> \
@@ -22,8 +23,14 @@ def crawl(time_limit: int = 60, source: str = 'https://en.wikipedia.org/wiki/Mai
             data = response.text
             if return_format == 'html':
                 return data
+            elif return_format == 'text':
+                soup = BeautifulSoup(response.content, 'html.parser')
+                # Extract text content (this will also remove HTML tags)
+                text = soup.get_text(separator=' ')  # Use a space as a separator between elements
+                # - Remove extra whitespace
+                text = ' '.join(text.split())
+                return text
             else:
-                # todo text. And maybe later CSV, dictionary, list, object
                 raise NotImplementedError("This data format has not been implemented yet.")
         else:
             print(f"Failed to retrieve data: HTTP {response.status_code}")

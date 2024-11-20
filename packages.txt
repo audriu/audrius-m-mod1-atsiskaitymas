@@ -1,4 +1,6 @@
 backports.tarfile==1.2.0
+beautifulsoup4==4.12.3
+bs4==0.0.2
 certifi==2024.8.30
 charset-normalizer==3.4.0
 docutils==0.21.2
@@ -20,6 +22,7 @@ requests==2.32.3
 requests-toolbelt==1.0.0
 rfc3986==2.0.0
 rich==13.9.4
+soupsieve==2.6
 twine==5.1.1
 typing_extensions==4.12.2
 urllib3==2.2.3
