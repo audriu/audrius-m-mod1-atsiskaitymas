@@ -2,6 +2,9 @@ import unittest
 from audrius_m_mod1_atsiskaitymas.crawler import crawl
 
 class CrawlTestCase(unittest.TestCase):
+    '''
+    Unit tests
+    '''
     def test_crawl_html_format(self):
         # Test crawling with default parameters and expecting HTML format
         result = crawl()
