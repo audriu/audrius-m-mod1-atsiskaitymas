@@ -5,6 +5,13 @@
 pip install audrius-m-mod1-atsiskaitymas
 ```
 
+## And test like that
+```
+from audrius_m_mod1_atsiskaitymas.crawler import crawl
+
+print(crawl(time_limit=60, source='https://lt.wikipedia.org/wiki/Pagrindinis_puslapis', return_format='text'))
+```
+
 ## Pypi repository is here:
 https://pypi.org/project/audrius-m-mod1-atsiskaitymas/
 
@@ -16,5 +23,6 @@ https://pypi.org/project/audrius-m-mod1-atsiskaitymas/
 ## Package and upload to pypi:
 ```
 python3 -m build
+
 twine upload dist/*
 ```
