@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="audrius_m_mod1_atsiskaitymas",
-    version="0.0.2",
+    version="0.0.7",
     author="Audrius M",
     author_email="balvakokay@gmail.com",
     description="Website crawler",
@@ -16,7 +16,11 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "audrius_m_mod1_atsiskaitymas"},
-    packages=setuptools.find_packages(where="audrius_m_mod1_atsiskaitymas"),
+    install_requires=[
+        'requests==2.32.3',
+        'requests-toolbelt==1.0.0',
+        'bs4==0.0.2'
+    ],
+    packages=setuptools.find_packages(where="."),
     python_requires=">=3.10"
 )
