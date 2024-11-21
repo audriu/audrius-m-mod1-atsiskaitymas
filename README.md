@@ -7,8 +7,6 @@ pip install audrius-m-mod1-atsiskaitymas
 
 Pypi repository is here: https://pypi.org/project/audrius-m-mod1-atsiskaitymas/
 
-##TODO
+run test coverage: `pytest --cov=audrius_m_mod1_atsiskaitymas tests/`
 
-#fix Pypi pip install
-
-#add tests `pytest --cov=my_module tests/`
+##TODO Fix Pypi pip install
