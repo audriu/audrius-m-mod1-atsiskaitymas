@@ -20,13 +20,13 @@ def crawl(time_limit: int = 60, source: str = 'https://en.wikipedia.org/wiki/Mai
         # Check if the request was successful
         if response.status_code == 200:
             # Process the response data
-            data = response.text
+            data: str = response.text
             if return_format == 'html':
                 return data
             elif return_format == 'text':
                 soup = BeautifulSoup(response.content, 'html.parser')
                 # Extract text content (this will also remove HTML tags)
-                text = soup.get_text(separator=' ')  # Use a space as a separator between elements
+                text: str = soup.get_text(separator=' ')  # Use a space as a separator between elements
                 # - Remove extra whitespace
                 text = ' '.join(text.split())
                 return text

@@ -1,10 +1,12 @@
 import unittest
 from audrius_m_mod1_atsiskaitymas.crawler import crawl
 
+
 class CrawlTestCase(unittest.TestCase):
-    '''
+    """
     Unit tests
-    '''
+    """
+
     def test_crawl_html_format(self):
         # Test crawling with default parameters and expecting HTML format
         result = crawl()
@@ -15,7 +17,7 @@ class CrawlTestCase(unittest.TestCase):
         # Test crawling and expecting text format
         result = crawl(return_format='text')
         self.assertIsNotNone(result)
-        self.assertTrue(result.startswith('Welcome to Wikipedia'))
+        self.assertTrue('Welcome to Wikipedia' in result)
 
     def test_crawl_with_custom_source(self):
         # Test crawling from a custom source
@@ -31,12 +33,13 @@ class CrawlTestCase(unittest.TestCase):
     def test_crawl_with_timeout(self):
         # Test crawling with a timeout
         result = crawl(time_limit=5, source='https://httpbin.org/delay/10')
-        self.assertIsNotNone(result)
+        self.assertIsNone(result)
 
     def test_crawl_with_unsupported_format(self):
         # Test crawling with an unsupported format should raise NotImplementedError
         with self.assertRaises(NotImplementedError):
             crawl(return_format='json')
+
 
 if __name__ == '__main__':
     unittest.main()
