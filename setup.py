@@ -5,11 +5,12 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="audrius_m_mod1_atsiskaitymas",
-    version="0.0.7",
+    version="0.1.0",
     author="Audrius M",
     author_email="balvakokay@gmail.com",
     description="Website crawler",
     long_description=long_description,
+    long_description_content_type='text/markdown',
     url="https://github.com/audriu/audrius-m-mod1-atsiskaitymas",
     classifiers=[
         "Programming Language :: Python :: 3",

@@ -22,7 +22,7 @@ https://pypi.org/project/audrius-m-mod1-atsiskaitymas/
 
 ## Package and upload to pypi:
 ```
-python3 -m build
+python setup.py sdist bdist_wheel
 
 twine upload dist/*
 ```
